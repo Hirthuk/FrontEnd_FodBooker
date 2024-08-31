@@ -1,14 +1,31 @@
 .container {
-    font-size: 20px;
-    background-color: whitesmoke;
+    align-items: center;
     text-align: center;
-    height: 25vh;
-
-
-    #heading{
-        font-size: large;
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        
-    }
+    background-color:antiquewhite;
+    display: flex;
+    
+    margin: auto;
 }
 
+#heading{
+    font-size: 3rem;
+    border-radius: 5%;
+    width: auto;
+    border-width: 5px;
+    border: 0.5rem solid blue;
+    outline-offset: -10px solid red;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    padding: 0.25rem;
+    
+}
+
+#buttonElement{
+    margin: 20px;
+    font-size: 3rem;
+    outline: 15px solid red;
+    outline-offset: 10px dashed green;
+    border-radius: 30%;
+    margin-left: 3rem;
+}
