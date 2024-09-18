@@ -1,0 +1,122 @@
+Semantic HTML elements convey meaning about their content, helping define the structure and purpose of a webpage. Here’s a list of common semantic HTML elements, their purposes, and typical content they might contain:
+
+### **1. `<header>`**
+   - **Purpose**: Represents introductory content or a group of navigational links. Often contains headings, logos, or introductory information.
+   - **Contents**: Typically includes a logo, site navigation (`<nav>`), and introductory headings (`<h1>`, `<h2>`).
+   - **Example**:
+     ```html
+     <header>
+       <h1>My Website</h1>
+       <nav>
+         <ul>
+           <li><a href="#home">Home</a></li>
+           <li><a href="#about">About</a></li>
+           <li><a href="#contact">Contact</a></li>
+         </ul>
+       </nav>
+     </header>
+     ```
+
+### **2. `<nav>`**
+   - **Purpose**: Defines a section of navigation links.
+   - **Contents**: Contains links to other parts of the website or related resources.
+   - **Example**:
+     ```html
+     <nav>
+       <ul>
+         <li><a href="#home">Home</a></li>
+         <li><a href="#services">Services</a></li>
+         <li><a href="#contact">Contact</a></li>
+       </ul>
+     </nav>
+     ```
+
+### **3. `<main>`**
+   - **Purpose**: Represents the dominant content of the `<body>` of the document. Excludes headers, footers, and sidebars.
+   - **Contents**: Typically contains the main content of the page, excluding repeated content like headers and footers.
+   - **Example**:
+     ```html
+     <main>
+       <article>
+         <h2>Main Article Title</h2>
+         <p>Content of the main article...</p>
+       </article>
+     </main>
+     ```
+
+### **4. `<section>`**
+   - **Purpose**: Defines a section in a document, typically with a heading. It groups related content together.
+   - **Contents**: Includes headings and related content, such as paragraphs, lists, or articles.
+   - **Example**:
+     ```html
+     <section>
+       <h2>About Us</h2>
+       <p>Information about the company...</p>
+     </section>
+     ```
+
+### **5. `<article>`**
+   - **Purpose**: Represents a self-contained piece of content that could be distributed independently. Often used for blog posts, news articles, or user comments.
+   - **Contents**: Includes a heading, content, and potentially metadata like author and date.
+   - **Example**:
+     ```html
+     <article>
+       <h2>Blog Post Title</h2>
+       <p>Content of the blog post...</p>
+       <footer>Posted by <a href="#author">Author</a> on September 16, 2024</footer>
+     </article>
+     ```
+
+### **6. `<footer>`**
+   - **Purpose**: Defines the footer of a document or section. Contains metadata, contact information, or links to related content.
+   - **Contents**: Typically includes information like copyright, contact details, or related links.
+   - **Example**:
+     ```html
+     <footer>
+       <p>&copy; 2024 My Website. All rights reserved.</p>
+       <p><a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a></p>
+     </footer>
+     ```
+
+### **7. `<aside>`**
+   - **Purpose**: Represents content that is tangentially related to the content around it, often used for sidebars, pull quotes, or additional information.
+   - **Contents**: May include related links, side notes, or additional content.
+   - **Example**:
+     ```html
+     <aside>
+       <h2>Related Articles</h2>
+       <ul>
+         <li><a href="#article1">Article 1</a></li>
+         <li><a href="#article2">Article 2</a></li>
+       </ul>
+     </aside>
+     ```
+
+### **8. `<figure>` and `<figcaption>`**
+   - **Purpose**: `<figure>` represents any content that illustrates or supports the content of a document (like images, diagrams, or videos). `<figcaption>` provides a caption for the content within `<figure>`.
+   - **Contents**: `<figure>` contains media content, and `<figcaption>` contains a description or caption.
+   - **Example**:
+     ```html
+     <figure>
+       <img src="example.jpg" alt="Example Image">
+       <figcaption>This is an example image.</figcaption>
+     </figure>
+     ```
+
+### **9. `<time>`**
+   - **Purpose**: Represents a specific period in time, such as a date or a time.
+   - **Contents**: Contains date/time information, often with a machine-readable format.
+   - **Example**:
+     ```html
+     <time datetime="2024-09-16">September 16, 2024</time>
+     ```
+
+### **10. `<mark>`**
+   - **Purpose**: Highlights text that is relevant or of special interest.
+   - **Contents**: Any inline content that should be highlighted.
+   - **Example**:
+     ```html
+     <p>We will be closed on <mark>September 16, 2024</mark>.</p>
+     ```
+
+Using these semantic elements helps ensure your HTML is well-structured and meaningful, making it easier for browsers, search engines, and assistive technologies to interpret and display your content effectively.

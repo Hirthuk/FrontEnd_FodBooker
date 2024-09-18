@@ -1,0 +1,20 @@
+Feature	Block-Level Elements	Inline Elements
+Width	
+Takes up full width of the container	Takes up only as much width as needed
+Line
+ Breaks	Always starts on a new line	Does not start on a new line
+Content	Can contain block-level and inline elements	Can only contain inline elements and text
+Usage	
+Used for creating the overall structure of the page	
+Used for styling or formatting within a block-level element
+Examples	
+<div>, <p>, <h1>, <ul>	
+<span>, <a>, <strong>, <img>
+
+float left or right used to make the element inside the container to go on the left or right based on our need
+and the remaining element will go to the side. if you want that floated element to be same with the parent like 
+style you can give display float-root
+
+By using column we can put the elements in columnar way like column count 4 means the elements inside
+elemetn will be arrangeed hortizontaaly in 4 column way and we can style the how to fix it by various 
+column method

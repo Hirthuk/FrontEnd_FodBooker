@@ -1,0 +1,130 @@
+Certainly! The CSS Grid Layout offers a range of properties and features that enable precise control over grid-based layouts. Here's a detailed breakdown of each property and its function:
+
+### 1. **Grid Container Properties**
+
+These properties are applied to the container element to establish the grid structure:
+
+#### **1.1. `display: grid`**
+
+- **Function:** Turns an element into a grid container, enabling the grid layout system for its direct children (grid items).
+- **Options:**
+  - `grid`: The standard grid container.
+  - `inline-grid`: The grid container behaves like an inline element, meaning it will fit the width of its content.
+
+#### **1.2. `grid-template-columns`**
+
+- **Function:** Defines the number and size of columns in the grid.
+- **Options:**
+  - **Fixed Size:** e.g., `100px 200px`, creates two columns with fixed widths.
+  - **Fractional Units:** e.g., `1fr 2fr`, defines columns based on fractions of the available space.
+  - **Auto:** e.g., `auto 1fr`, makes columns adjust their size based on content or available space.
+
+#### **1.3. `grid-template-rows`**
+
+- **Function:** Defines the number and size of rows in the grid.
+- **Options:**
+  - **Fixed Size:** e.g., `50px 100px`, creates two rows with fixed heights.
+  - **Fractional Units:** e.g., `1fr 2fr`, defines rows based on fractions of the available space.
+  - **Auto:** e.g., `auto 1fr`, makes rows adjust their size based on content or available space.
+
+#### **1.4. `grid-template-areas`**
+
+- **Function:** Allows you to create a visual layout by naming grid areas, making it easier to place items in specific areas.
+- **Options:**
+  - **Named Areas:** e.g., `"header header" "sidebar content" "footer footer"`, defines named areas that can be used to position grid items.
+
+#### **1.5. `grid-column`**
+
+- **Function:** Specifies the start and end positions of a grid item within the columns of the grid.
+- **Options:**
+  - **Span:** e.g., `grid-column: 1 / 3;`, spans from the first to the third column line.
+  - **Single Value:** e.g., `grid-column: 2;`, starts from the second column line and ends automatically.
+
+#### **1.6. `grid-row`**
+
+- **Function:** Specifies the start and end positions of a grid item within the rows of the grid.
+- **Options:**
+  - **Span:** e.g., `grid-row: 1 / 3;`, spans from the first to the third row line.
+  - **Single Value:** e.g., `grid-row: 2;`, starts from the second row line and ends automatically.
+
+#### **1.7. `grid-area`**
+
+- **Function:** Allows you to place a grid item in a named grid area or define its size and position explicitly.
+- **Options:**
+  - **Named Area:** e.g., `grid-area: header;`, places the item in the area named “header.”
+  - **Explicit Values:** e.g., `grid-area: 1 / 2 / 3 / 4;`, defines the item’s start and end lines for rows and columns.
+
+#### **1.8. `gap` (or `grid-gap`)**
+
+- **Function:** Defines the spacing between rows and columns in the grid.
+- **Options:**
+  - **Single Value:** e.g., `gap: 10px;`, sets a uniform gap between rows and columns.
+  - **Two Values:** e.g., `gap: 10px 20px;`, sets the row gap to 10px and the column gap to 20px.
+
+#### **1.9. `auto-flow`**
+
+- **Function:** Controls the auto-placement of grid items when not explicitly placed in grid cells.
+- **Options:**
+  - **`row`**: Items are placed in rows first before moving to the next row.
+  - **`column`**: Items are placed in columns first before moving to the next column.
+  - **`dense`**: Attempts to fill any gaps in the grid by placing items in available spaces.
+
+### 2. **Grid Item Properties**
+
+These properties are applied to the children of the grid container (i.e., grid items):
+
+#### **2.1. `grid-column-start` and `grid-column-end`**
+
+- **Function:** Defines where a grid item starts and ends within the columns.
+- **Options:**
+  - **Line Numbers:** e.g., `grid-column-start: 1; grid-column-end: 3;`, starts at column line 1 and ends at line 3.
+  - **Named Lines:** e.g., `grid-column-start: first; grid-column-end: last;`, starts and ends at named lines.
+
+#### **2.2. `grid-row-start` and `grid-row-end`**
+
+- **Function:** Defines where a grid item starts and ends within the rows.
+- **Options:**
+  - **Line Numbers:** e.g., `grid-row-start: 1; grid-row-end: 3;`, starts at row line 1 and ends at line 3.
+  - **Named Lines:** e.g., `grid-row-start: first; grid-row-end: last;`, starts and ends at named lines.
+
+#### **2.3. `justify-self`**
+
+- **Function:** Aligns a grid item inside its grid cell along the row (inline) axis.
+- **Options:**
+  - **`start`**: Aligns the item to the start of the cell.
+  - **`end`**: Aligns the item to the end of the cell.
+  - **`center`**: Centers the item within the cell.
+  - **`stretch`**: Stretches the item to fill the cell (default).
+
+#### **2.4. `align-self`**
+
+- **Function:** Aligns a grid item inside its grid cell along the column (block) axis.
+- **Options:**
+  - **`start`**: Aligns the item to the start of the cell.
+  - **`end`**: Aligns the item to the end of the cell.
+  - **`center`**: Centers the item within the cell.
+  - **`stretch`**: Stretches the item to fill the cell (default).
+
+#### **2.5. `place-self`**
+
+- **Function:** A shorthand for `align-self` and `justify-self`.
+- **Options:**
+  - **Single Value:** e.g., `place-self: center;`, applies the same alignment for both axes.
+  - **Two Values:** e.g., `place-self: center start;`, first value for alignment along the block axis, second for the inline axis.
+
+### Summary
+
+The CSS Grid Layout system provides a versatile and robust way to create complex, responsive layouts with precise control over both rows and columns. It includes properties for defining grid structure, positioning grid items, and managing gaps between elements. These properties work together to enable sophisticated and flexible web design.
+
+If typing out both grid-column and grid-row is too much for you, there's yet another shorthand for that. grid-area accepts four values separated by slashes: grid-row-start, grid-column-start, grid-row-end, followed by grid-column-end.
+
+One example of this would be grid-area: 1 / 1 / 3 / 6;.
+
+f grid items aren't explicitly placed with grid-area, grid-column, grid-row, etc., they are automatically placed according to their order in the source code. We can override this using the order property, which is one of the advantages of grid over table-based layout.
+
+By default, all grid items have an order of 0, but this can be set to any positive or negative value, similar to z-index.
+
+For example, we previously defined five 20% columns with the rule grid-template-columns: 20% 20% 20% 20% 20%;. This can be simplified as grid-template-columns: repeat(5, 20%);
+Grid also introduces a new unit, the fractional fr. Each fr unit allocates one share of the available space. For example, if two elements are set to 1fr and 3fr respectively, the space is divided into 4 equal shares; the first element occupies 1/4 and the second element 3/4 of any leftover space.
+
+Here, weeds make up the left 1/6 of your first row and carrots the remaining 5/6. Create two columns with these widths using fr units.

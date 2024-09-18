@@ -1,0 +1,101 @@
+CSS functions are built-in methods that allow you to manipulate values and properties dynamically. They enhance the styling capabilities of CSS by enabling calculations, color manipulations, and more. Here’s an overview of the most commonly used CSS functions:
+
+### 1. Color Functions
+
+- **`rgb()`**: Defines a color using red, green, and blue components.
+  ```css
+  color: rgb(255, 0, 0); /* Red */
+  ```
+
+- **`rgba()`**: Similar to `rgb()`, but includes an alpha (transparency) value.
+  ```css
+  color: rgba(255, 0, 0, 0.5); /* Semi-transparent red */
+  ```
+
+- **`hsl()`**: Defines a color using hue, saturation, and lightness.
+  ```css
+  color: hsl(120, 100%, 50%); /* Green */
+  ```
+
+- **`hsla()`**: Similar to `hsl()`, but includes an alpha value.
+  ```css
+  color: hsla(120, 100%, 50%, 0.5); /* Semi-transparent green */
+  ```
+
+### 2. Calculation Functions
+
+- **`calc()`**: Performs calculations to set property values dynamically.
+  ```css
+  width: calc(100% - 50px); /* Calculates width */
+  ```
+
+- **`min()`**: Returns the smallest value among its arguments.
+  ```css
+  width: min(300px, 50%); /* Takes the lesser value */
+  ```
+
+- **`max()`**: Returns the largest value among its arguments.
+  ```css
+  width: max(200px, 50%); /* Takes the greater value */
+  ```
+
+- **`clamp()`**: Restricts a value between a defined minimum and maximum.
+  ```css
+  font-size: clamp(16px, 2vw, 24px); /* Responsive font size */
+  ```
+
+### 3. Transformation Functions
+
+- **`translateX()`, `translateY()`, `translateZ()`**: Moves an element along the X, Y, or Z axis.
+  ```css
+  transform: translateX(50px);
+  ```
+
+- **`rotate()`**: Rotates an element around a specified angle.
+  ```css
+  transform: rotate(45deg);
+  ```
+
+- **`scale()`**: Scales an element up or down.
+  ```css
+  transform: scale(1.5); /* 150% size */
+  ```
+
+- **`skewX()` and `skewY()`**: Skews an element along the X or Y axis.
+  ```css
+  transform: skewX(10deg);
+  ```
+
+### 4. Animation Functions
+
+- **`cubic-bezier()`**: Defines a custom timing function for animations.
+  ```css
+  transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+  ```
+
+- **`steps()`**: Defines a stepped timing function for animations.
+  ```css
+  animation: myAnimation 1s steps(10);
+  ```
+
+### 5. URL Function
+
+- **`url()`**: Used to specify a URL for resources like images or fonts.
+  ```css
+  background-image: url('image.jpg');
+  ```
+
+### 6. Other Functions
+
+- **`var()`**: Retrieves the value of a CSS variable.
+  ```css
+  color: var(--primary-color);
+  ```
+
+- **`attr()`**: Retrieves an attribute's value of an HTML element. Mostly used in content for pseudo-elements.
+  ```css
+  content: attr(data-title);
+  ```
+
+### Conclusion
+CSS functions enhance the power and flexibility of styling by allowing dynamic calculations, color manipulation, transformations, and more. Mastering these functions can significantly improve your CSS coding capabilities and lead to more responsive and visually appealing designs!

@@ -1,0 +1,39 @@
+CSS variables, also known as custom properties, allow you to store values that can be reused throughout your stylesheets. They start with two hyphens (`--`) and can be defined within a selector. Here's a brief overview:
+
+### Defining Variables
+You can define a variable in a selector like this:
+
+```css
+:root {
+  --primary-color: #3498db;
+  --font-size: 16px;
+}
+```
+
+### Using Variables
+To use a variable, use the `var()` function:
+
+```css
+body {
+  color: var(--primary-color);
+  font-size: var(--font-size);
+}
+```
+
+### Benefits
+- **Reusability**: Easily reuse values throughout your stylesheet.
+- **Maintainability**: Changing a variable in one place updates all uses, simplifying maintenance.
+- **Dynamic Theming**: Variables enable easier implementation of themes by changing values globally.
+
+### Example
+```css
+:root {
+  --main-bg: #f0f0f0;
+}
+
+.header {
+  background-color: var(--main-bg);
+}
+```
+
+CSS variables enhance flexibility and control in your styles!

@@ -1,9 +1,29 @@
-.container {
-    align-items: center;
+/* .container{
     text-align: center;
+    display: flex;
+    border: 3px solid;
+    border-radius: 2rem;
+    
+    margin: auto;
+}
+#heading{
+    margin-left: 10px ;
+    margin-right: 10px;
+    border: 3px solid blue;
+    border-radius: 2rem;
+    font-size: 40px;
+    width: auto;
+} */
+
+.container {
+    
+    
     background-color:antiquewhite;
     display: flex;
-    
+    flex-wrap: wrap;
+    border: 10px solid black;
+    border-radius: 2rem ;
+   
     margin: auto;
 }
 
@@ -11,21 +31,46 @@
     font-size: 3rem;
     border-radius: 5%;
     width: auto;
-    border-width: 5px;
-    border: 0.5rem solid blue;
-    outline-offset: -10px solid red;
+    border-width: 10px;
+
+    border: 10px solid blue;
+    outline: 10px solid yellow;
+    
     margin: auto;
     display: flex;
     align-items: center;
     padding: 0.25rem;
+    margin-left: 0.2rem;
+    font-family: "SUSE", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  
     
 }
-
 #buttonElement{
-    margin: 20px;
+    margin: 30px;
     font-size: 3rem;
     outline: 15px solid red;
     outline-offset: 10px dashed green;
-    border-radius: 30%;
-    margin-left: 3rem;
+    border-radius: 5%;
+    margin-left: 1rem;
+}
+.buttoncontainer{
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+#image{
+    height: 6rem;
+    width: 10rem;
+    margin: auto;
+    border: 3px solid white;
+    border-radius: 50%;
+    outline: 5px burlywood;
+
+    
 }
