@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Header from './Componenets/Header'; // Import the Header component
+import SecondHeader from './Componenets/secondheader';
 import MainComponent from './Componenets/MainCompo'; // Import the Main content component
 import Footer from './Componenets/FooterCompo'; // Import the Footer component
 import './App.css'; // Import the CSS file to style the App layout
@@ -12,6 +13,11 @@ function App() {
       <div className="header">
         {/* This div wraps the Header component and gives it specific styles to control its height (30% of the page) */}
         <Header />
+       
+        
+      </div>
+      <div className='secondheader'>
+      <SecondHeader/>
       </div>
 
       <div className="main">

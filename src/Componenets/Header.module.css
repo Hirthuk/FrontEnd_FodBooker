@@ -10,7 +10,7 @@
     position: relative;
     height: 100%;
     width: 100%;
-    background-image: url(./../assets/backgroundImage.gif);
+    
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -64,7 +64,7 @@ img:hover{
     width: 100%; /* Ensures it spans the remaining available width */
     margin: 0;
     
-   margin-bottom: 10px;
+   
     position: relative; /* Keeps the image relative within its container */
 }
 
@@ -75,9 +75,7 @@ img:hover{
     align-items: center;
     padding: 10px;
     transition: transform 0.5s ease, box-shadow 0.5s ease;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    
 }
 
 .Appheading:hover{

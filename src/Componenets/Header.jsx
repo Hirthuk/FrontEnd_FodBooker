@@ -12,22 +12,7 @@ function Header(props) {
             <img className = {style.firstimage}src={logo}/>
             <img className = {style.myImage} src={AppLogo} alt=""/>
           </section>
-          <section className= {style.Appheading}>
-            <img src= {HomeLogo} alt="" srcset="" />
-            <nav>
-                <ul>
-                   <li><a href="">Go to Shops</a></li> 
-                    <li><a href="">My Favourites</a></li>
-                    <li><a href="">My Cart</a></li>
-                   <li><a href="">My Profie</a></li> 
-                   <li><a href="">Instagram</a></li>
-                    <li><a href="">Feedback</a></li>
-                </ul>
-                
-                    
-                
-            </nav>
-          </section>
+          
         </div>
     );
 }

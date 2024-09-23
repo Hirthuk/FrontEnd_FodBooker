@@ -1,23 +1,41 @@
 .App {
     display: flex;
     flex-direction: column;
-    min-height: 200vh; /* Ensure the app takes the full height of the viewport */
+    height: 100%;
     position: relative;
     border-radius: 5px;
+    background-image: url(./assets/backgroundImage.gif);
+    
 }
 
-.header {
-    height: 25%;
-    background-color: lightblue;
+.header  {
+    height: 15%;
+    min-height: 50vh;
+    
+    background-image: url(./assets/backgroundImage.gif);
+    margin-bottom: 40px;
+    
+    
+
 }
+.secondheader {
+    height: 15%;
+    min-height: 50vh;
+    
+    
+   
+}
+
 
 .main {
-    flex-grow: 1;
-    background-color: lightcoral;
+    
+    background-color: blue;
+    min-height: 100vh;
     /* The main section will grow to take up the remaining space between the header and footer */
 }
 
 .footer {
     height: 10%;
+    min-height: 25vh;
     background-color: lightcyan;
 }
