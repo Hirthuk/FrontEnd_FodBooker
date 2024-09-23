@@ -1,76 +1,125 @@
-/* .container{
-    text-align: center;
-    display: flex;
-    border: 3px solid;
-    border-radius: 2rem;
-    
-    margin: auto;
+* {
+    box-sizing: border-box; /* Ensure padding and borders are included in width/height calculations */
+    margin: 0;
+    padding: 0;
 }
-#heading{
-    margin-left: 10px ;
-    margin-right: 10px;
-    border: 3px solid blue;
-    border-radius: 2rem;
-    font-size: 40px;
-    width: auto;
-} */
 
 .container {
-    
-    
-    background-color:antiquewhite;
     display: flex;
-    flex-wrap: wrap;
-    border: 10px solid black;
-    border-radius: 2rem ;
-   
-    margin: auto;
+    flex-direction: column;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-image: url(./../assets/backgroundImage.gif);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    
 }
 
-#heading{
-    font-size: 3rem;
-    border-radius: 5%;
-    width: auto;
-    border-width: 10px;
-
-    border: 10px solid blue;
-    outline: 10px solid yellow;
-    
-    margin: auto;
-    display: flex;
-    align-items: center;
-    padding: 0.25rem;
-    margin-left: 0.2rem;
-    font-family: "SUSE", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 100;
-  
-    
-}
-#buttonElement{
-    margin: 30px;
-    font-size: 3rem;
-    outline: 15px solid red;
-    outline-offset: 10px dashed green;
-    border-radius: 5%;
-    margin-left: 1rem;
-}
-.buttoncontainer{
-    
+.myheading {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+    align-items: flex-start;
 
-}
-
-#image{
-    height: 6rem;
-    width: 10rem;
-    margin: auto;
-    border: 3px solid white;
-    border-radius: 50%;
-    outline: 5px burlywood;
-
+    justify-content: normal;
+    height: 50%; /* Fixed height for the header */
+    width: 100%;
+    position: relative;
+   
+    padding: 10px;
     
 }
+.myheading img{
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    border-radius: 5px;
+    object-fit: contain;
+
+}
+
+img:hover{
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0,0.3);
+}
+
+.firstImage {
+    display: block;  
+    /* To avoiud inline spacing happens between elements(usual for inline elements) */
+    height: 100%; /* Take full height of the container */
+    width: auto; /* Make the width scale automatically */
+    position: relative; /* Use relative positioning for better control */
+    left: 0;
+    object-fit: cover; /* Fill the container without leaving gaps */
+    margin: 0; /* Ensure no extra space is added */
+    padding: 0;
+    
+}
+
+.myImage {
+    display: block;
+    flex-grow: 1; /* This ensures the image takes up the remaining space */
+    height: 300px; /* Take full height of the .myheading container */
+    
+    width: 100%; /* Ensures it spans the remaining available width */
+    margin: 0;
+    
+   margin-bottom: 10px;
+    position: relative; /* Keeps the image relative within its container */
+}
+
+.Appheading{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.Appheading:hover{
+    transform: scale(0.93);
+}
+.Appheading img{
+    height: 10rem;
+    border-radius: 10px;
+}
+
+.Appheading ul{
+    display: flex;
+   
+    list-style: none;
+
+}
+
+.Appheading ul li {
+    margin: 15px;
+    justify-content: space-between;
+    display: flex;
+    align-items:stretch;
+    align-content: center;
+    
+}
+.Appheading ul li a {
+    font-size: 2rem;
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: bold;
+    padding: 10px 5px;
+    border: 5px solid #ffa500;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: color 0.3s ease, transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .Appheading ul li a:hover {
+    
+    color: black;
+    transform: scale(1.1); /* Slight zoom on hover */
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: brown; /* Change background on hover for more distinction */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4); /* Add shadow for a "lifted" effect */
+  }

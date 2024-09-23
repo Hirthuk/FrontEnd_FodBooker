@@ -1,3 +1,14 @@
-body{
-    background-color: aliceblue;
+/* Putting global styles here */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%; /* Ensure the html and body take the full viewport height */
+}
+
+#root {
+    min-height: 200vh; /* Ensures the app takes at least the full viewport height */
+    display: flex;
+    flex-direction: column;
 }

@@ -67,7 +67,7 @@ Semantic HTML elements convey meaning about their content, helping define the st
      </article>
      ```
 
-### **6. `<footer>`**
+  6. `<footer>`
    - **Purpose**: Defines the footer of a document or section. Contains metadata, contact information, or links to related content.
    - **Contents**: Typically includes information like copyright, contact details, or related links.
    - **Example**:

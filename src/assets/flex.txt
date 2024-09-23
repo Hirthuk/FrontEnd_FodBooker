@@ -2,7 +2,7 @@ Justify-content for horizontal alignment and align-items for vertical alignment
 align-content is to position the gap and all between the child elements
 Flexbox is a CSS layout model designed to distribute space and align items in a container more effectively than traditional layout techniques. When you set an element to `display: flex`, it becomes a flex container, and its children become flex items. This model simplifies complex layouts and provides powerful alignment and distribution options.
 Notice that when the flex direction is a column, justify-content changes to the vertical and align-items to the horizontal.
-flex basis to mention the width of inidiidual element
+flex basis to mention the width of inidividual element
 flex-grow to grow the individual items
 ### Key Properties of Flexbox
 
