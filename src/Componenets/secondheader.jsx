@@ -9,15 +9,15 @@ function SecondHeader(props) {
     return (
         <div className={style.container} >
             <section className= {style.Appheading}>
-            <img src= {HomeLogo} alt="" srcset="" />
+           
             <nav>
                 <ul>
-                   <li><a href="">Go to Shops</a></li> 
+                   <li><a onClick={props.scroll}>Go to Shops</a></li> 
                     <li><a href="">My Favourites</a></li>
                     <li><a href="">My Cart</a></li>
                    <li><a href="">My Profie</a></li> 
-                   <li><a href="">Instagram</a></li>
-                    <li><a href="">Feedback</a></li>
+                   <li><a  onClick={props.footerScroll}>Instagram</a></li>
+                    <li><a onClick={props.footerScroll} >Feedback</a></li>
                 </ul>
                 
                     

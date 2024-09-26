@@ -76,4 +76,7 @@ img:hover{
     text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
     background-color: brown; /* Change background on hover for more distinction */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4); /* Add shadow for a "lifted" effect */
+    cursor: pointer;
   }
+
+  

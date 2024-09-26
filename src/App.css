@@ -10,7 +10,8 @@
 
 .header  {
     height: 15%;
-    min-height: 50vh;
+    min-height: 40vh;
+    max-height: 50vh;
     
     background-image: url(./assets/backgroundImage.gif);
     margin-bottom: 40px;
@@ -20,7 +21,8 @@
 }
 .secondheader {
     height: 15%;
-    min-height: 50vh;
+    min-height: 30vh;
+    max-height: 50vh;
     
     
    
@@ -37,5 +39,5 @@
 .footer {
     height: 10%;
     min-height: 25vh;
-    background-color: lightcyan;
+   background-color: lightgreen;
 }

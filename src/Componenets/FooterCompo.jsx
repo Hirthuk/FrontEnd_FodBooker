@@ -1,8 +1,8 @@
-import {reactDom} from 'react-dom/client'
-import style from './footer.module.css'
+import style from './Footer.module.css';
 
 function Footer(props) {
-    return <div className= {style.container}>
+    // condition ? value_if_true : value_if_false
+    return <div className= {style.container}> 
     
     </div>
 }
