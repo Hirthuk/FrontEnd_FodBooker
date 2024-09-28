@@ -1,5 +1,5 @@
 import {reactdom} from 'react-dom/client'
-import styles from './Maincompo.module.css'
+import styles from './component styles/Maincompo.module.css'
 
 function MainComponent(props){
     return  <div className= {styles.container}>
