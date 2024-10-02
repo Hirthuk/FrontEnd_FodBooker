@@ -1,6 +1,19 @@
+* {
+    box-sizing: border-box; /* Ensure padding and borders are included in width/height calculations */
+    margin: 0;
+    padding: 0;
+}
+
+
+
 .container{
     display: flex;
+    position: relative;
     height: 100%;
     width: 100%;
-    background-color: red;
+    
+}
+
+#HighLight{
+    background-color: yellow;
 }

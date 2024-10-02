@@ -1,0 +1,11 @@
+
+.container {
+    width: 100%;  /* Ensure the container takes the full width of the parent */
+    height: 100%; /* Ensure the container takes the full height of the parent */
+    
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+}

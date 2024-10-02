@@ -21,7 +21,7 @@
 }
 .secondheader {
     height: 15%;
-    min-height: 30vh;
+    min-height: 31vh;
     max-height: 50vh;
     
     
@@ -38,6 +38,7 @@
 
 .footer {
     height: 10%;
-    min-height: 25vh;
-   background-color: lightgreen;
+    min-height: 15vh;
+
+   
 }
