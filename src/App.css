@@ -39,6 +39,24 @@
 .footer {
     height: 10%;
     min-height: 15vh;
+   
+    background-color: lightcoral;
 
    
 }
+
+.Profile{
+    margin: 1rem;   /* Adds padding inside the profile container */
+    border: 4px solid #000; /* Adds a black border around the profile section */
+    padding: 0.25rem;
+    background-color: #f9f9f9; /* Optional: light background */
+    border-radius: 5px; /* Optional: adds rounded corners */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds shadow for depth */
+    
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+
+

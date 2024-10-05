@@ -8,7 +8,7 @@ html, body {
 }
 
 #root {
-    min-height: 200vh; /* Ensures the app takes at least the full viewport height */
+    min-height: 100vh; /* Ensures the app takes at least the full viewport height */
     display: flex;
     flex-direction: column;
 }

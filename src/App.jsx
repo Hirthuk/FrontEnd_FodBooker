@@ -10,7 +10,7 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import MyFavourites from './Componenets/MyFavourites';
 import MyCart from './Componenets/MyCart';
 import MyProfile from './Componenets/MyProfile';
-import RouteHeader from './Componenets/Routeheader';
+
 
 function App() {
   const myRef = useRef(null);
@@ -101,8 +101,8 @@ function App() {
         <Route
         path='/favourites'
         element = {
-          <div className= "App">
-            <RouteHeader/>
+          <div>
+           
             <MyFavourites/>
             <Footer/>
 
@@ -112,8 +112,8 @@ function App() {
         <Route
         path='/MyCart'
         element = {
-          <div className='App'> 
-           <RouteHeader/>
+          <div> 
+          
            <MyCart/>
            <Footer/>
           
@@ -123,8 +123,7 @@ function App() {
         <Route
         path='/MyProfile'
         element = {
-          <div className='App'>
-            <RouteHeader/>
+          <div className= "Profile">
             <MyProfile/>
             <Footer/>
           </div>

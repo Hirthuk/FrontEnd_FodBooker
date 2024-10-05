@@ -1,3 +1,15 @@
 .container{
     background-color: bisque;
+    height: 100%;
+   text-align: center;
+   padding: 5px;
+   flex-direction: row;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+}
+.HomeImage{
+    height: 50px;
 }

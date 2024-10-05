@@ -9,11 +9,50 @@
 .container{
     display: flex;
     position: relative;
-    height: 100%;
+    
     width: 100%;
+    min-height: 15vh;
+    
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: start;
+    background-color: #f4f4f4;  /* Subtle background color */
+    bottom: 0;
+    left: 0;
+    right: 0;
     
 }
+.imagecontainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+    
+    
+}
+.ImageLogo{
+    height: 6rem;
+    width: 6rem;
+    border-radius: 25%;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;  /* Smooth animation */
+    filter: grayscale(50%);  /* Starts with greyscale effect */
+}
 
+    
+
+.ImageLogo:hover {
+    transform: scale(1.1);   /* Slightly increases size on hover */
+    filter: grayscale(0);    /* Removes greyscale on hover */
+}
 #HighLight{
-    background-color: yellow;
+    background-color: yellow;   /* Highlight background color */
+    transition: background-color 0.5s ease-in-out;
+}
+
+.container:hover {
+    background-color:crimson;/* Slight color change on hover */
+    transition: background-color 0.3s ease-in-out;
 }
