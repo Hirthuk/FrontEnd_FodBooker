@@ -10,6 +10,7 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import MyFavourites from './Componenets/MyFavourites';
 import MyCart from './Componenets/MyCart';
 import MyProfile from './Componenets/MyProfile';
+import Updatedetails from './Componenets/Updateinput';
 
 
 function App() {
@@ -126,6 +127,14 @@ function App() {
           <div className= "Profile">
             <MyProfile/>
             <Footer/>
+          </div>
+        }
+        />
+        <Route
+        path = '/Updatedetails'
+        element = {
+          <div className='Details'>
+            <Updatedetails/>
           </div>
         }
         />
