@@ -6,6 +6,11 @@ import SecondHeader from './Componenets/secondheader';
 import MainComponent from './Componenets/MainCompo'; // Import the Main content component
 import Footer from './Componenets/FooterCompo'; // Import the Footer component
 import './App.css'; // Import the CSS file to style the App layout
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import MyFavourites from './Componenets/MyFavourites';
+import MyCart from './Componenets/MyCart';
+import MyProfile from './Componenets/MyProfile';
+import RouteHeader from './Componenets/Routeheader';
 
 function App() {
   const myRef = useRef(null);
@@ -61,7 +66,12 @@ function App() {
 
 
   return (
-    <div className="App">
+    <Router>
+      <Routes>
+        <Route
+        path='/'
+        element= {
+          <div className="App">
       <div className="header">
         <Header />
       </div>
@@ -71,6 +81,7 @@ function App() {
           footerScroll={ScrollToFooter}
         />
       </div>
+      
 
       <div className="main" ref={myRef}>
         <MainComponent 
@@ -84,6 +95,44 @@ function App() {
         />
       </div>
     </div>
+        }
+        
+        />
+        <Route
+        path='/favourites'
+        element = {
+          <div className= "App">
+            <RouteHeader/>
+            <MyFavourites/>
+            <Footer/>
+
+          </div>
+        }
+        />
+        <Route
+        path='/MyCart'
+        element = {
+          <div className='App'> 
+           <RouteHeader/>
+           <MyCart/>
+           <Footer/>
+          
+          </div>
+        }
+        />
+        <Route
+        path='/MyProfile'
+        element = {
+          <div className='App'>
+            <RouteHeader/>
+            <MyProfile/>
+            <Footer/>
+          </div>
+        }
+        />
+      </Routes>
+    
+    </Router>
   );
 }
 

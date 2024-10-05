@@ -13,9 +13,9 @@ function SecondHeader(props) {
             <nav>
                 <ul>
                    <li><a onClick={props.scroll}>Go to Shops</a></li> 
-                    <li><a href="">My Favourites</a></li>
-                    <li><a href="">My Cart</a></li>
-                   <li><a href="">My Profie</a></li> 
+                    <li><a href="/favourites">My Favourites</a></li>
+                    <li><a href="/MyCart">My Cart</a></li>
+                   <li><a href="/MyProfile">My Profie</a></li> 
                    <li><a  onClick={props.footerScroll}>Instagram</a></li>
                     <li><a onClick={props.footerScroll} >Feedback</a></li>
                 </ul>
