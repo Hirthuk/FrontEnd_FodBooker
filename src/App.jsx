@@ -6,7 +6,7 @@ import SecondHeader from './Componenets/secondheader';
 import MainComponent from './Componenets/MainCompo'; // Import the Main content component
 import Footer from './Componenets/FooterCompo'; // Import the Footer component
 import './App.css'; // Import the CSS file to style the App layout
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route, Link, NavLink} from 'react-router-dom';
 import MyFavourites from './Componenets/MyFavourites';
 import MyCart from './Componenets/MyCart';
 import MyProfile from './Componenets/MyProfile';
@@ -17,7 +17,8 @@ function App() {
   const myRef = useRef(null);
   const footerRef = useRef(null);
   const [ishighlighted, setHighlited] = useState(false);
-  const [UserDetail, setusername] = useState("user");
+  const [UserName, setusername] = useState("user");
+  const[Alldetail, setAlldetail] = useState({});
 
   function ScrollFunction() {
     myRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -32,16 +33,7 @@ function App() {
     }, 2000);
   }
 
-  async function getDetails() {
-    try {
-      const response = await axios.get("http://localhost:3000/UsernameDetails");
-      const firstname = response.data.firstName;
-      console.log(firstname); // Log the fetched firstname
-      setusername(firstname);
-    } catch (error) {
-      console.error("Error fetching user details:", error);
-    }
-  }
+  
 
   
     async function getDetails() {
@@ -49,9 +41,10 @@ function App() {
         const response = await axios.get("http://localhost:3000/UsernameDetails", {
           withCredentials: true,  // Make sure cookies are included in the request
         });
-        const firstname = response.data.firstName;
-        console.log(firstname); // Log the fetched firstname
-        setusername(firstname);
+        const AllDetails = response.data;
+        // console.log(AllDetails); // Log the All details
+        setusername(AllDetails.firstName);
+        setAlldetail(AllDetails);
       } catch (error) {
         console.error("Error fetching user details:", error);
       }
@@ -60,7 +53,13 @@ function App() {
    
     
   useEffect(() => {
+    setTimeout(() =>{
+      alert(`Your session has ended please login again`);
+      window.location.href = "http://localhost:3000" // Redirecting to Login page after session end. after login page here only
+      // the useffect comes to take name. so we mentions 1 hr same as the session we mentioned. 
+    }, 1000*60*60);
     getDetails(); // Call the async function
+    
 
   },[])
   
@@ -86,7 +85,7 @@ function App() {
 
       <div className="main" ref={myRef}>
         <MainComponent 
-          username={UserDetail}
+          username={UserName}
         />
       </div>
 
@@ -125,7 +124,10 @@ function App() {
         path='/MyProfile'
         element = {
           <div className= "Profile">
-            <MyProfile/>
+            <MyProfile
+            username = {UserName}
+            OtherDetails = {Alldetail}
+            />
             <Footer/>
           </div>
         }

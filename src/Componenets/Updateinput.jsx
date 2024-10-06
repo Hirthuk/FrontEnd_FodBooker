@@ -1,10 +1,30 @@
 import React from "react";
 import style from './component styles/updatedetails.module.css'
+import { useState } from "react";
+import axios from 'axios'
 
 const Updatedetails = (props) => {
+
+    
+
+
+    const handleInput = (event) => {
+        event.preventDefault();
+
+        setDetails(
+            {
+                firstname: event.target.firstname,
+                lastname: event.target.secondname,
+                contact: event.target.Contant,
+                email: event.target.Email,
+            }
+        )
+            console.log(getDetails)
+
+    }
     return (<div className= {style.container}>
         <h1>Update your details</h1>
-        <form action="/UpdateDetails" method="post">
+        <form onSubmit={handleInput} method="post">
             <div className= {style.inputForm}>
                 <label htmlFor="firstname">Firstname</label>
                 <input type="text" name="firstname" id="firstname" placeholder="Enter you firstname" required/>
