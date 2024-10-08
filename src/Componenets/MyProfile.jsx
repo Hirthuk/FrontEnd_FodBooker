@@ -6,10 +6,7 @@ import { useState } from "react";
 
 function MyProfile(props) {
 
-    const [firstname, setFirstName] = useState("User");
-    const [lastname, setLastName] = useState("User");
-    const [contactNumber, setContact] = useState("Number not updated");
-    const [email, setEmail] = useState("")
+    
 
     return (
         <div className={style.container}>
@@ -30,7 +27,7 @@ function MyProfile(props) {
                     <h2>Email: {props.OtherDetails.email}</h2>
                     {/* if number is null(which means false) saying number updated. if true returning that value itself*/}
                     <h2>Contact Info: {props.OtherDetails.ContactInfo? props.OtherDetails.ContactInfo: "Number needs to be updated"}</h2>
-                 <a href="/Updatedetails" target="_blank"><button type="submit">Update</button></a>   
+                 <a href="/Updatedetails"><button type="submit">Update</button></a>   
                 </section>
             </main>
         </div>
