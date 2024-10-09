@@ -19,17 +19,26 @@ const Updatedetails = (props) => {
             const response = await axios.post("http://localhost:3000/receiveUserDetails", getDetails, {
                 headers: {
                     'Content-Type': 'application/json'
-                }
+                },
+                withCredentials: true // This became more important. while communication between server
+                // using axios we want to share the session we have set this. from backend we recevied the session to front end
+                // Now giving back to frontend to authenitcate user using session in this endpoint
             });
 
             console.log("Response:", response.data);
 
             // Show an alert and redirect after the data is successfully sent
-            console.log(getDetails.firstname);
-            alert("Your details will be updated");
-            setTimeout(() => {
+            // console.log(getDetails.firstname);
+            // alert("Your details will be updated");
+            setTimeout(async () => {
+                const reply = await axios.post("http://localhost:3000/receiveUserDetails",{
+                    withCredentials: true
+                })
+                alert(`${reply.data}`);
+        
                 window.location.href = "http://localhost:5173";
-            }, 1500);
+            }, 10000);
+            
         } catch (error) {
             console.log("Error:", error);
         }
