@@ -25,19 +25,20 @@ const Updatedetails = (props) => {
                 // Now giving back to frontend to authenitcate user using session in this endpoint
             });
 
-            console.log("Response:", response.data);
+            // console.log("Response:", response.data);
 
             // Show an alert and redirect after the data is successfully sent
             // console.log(getDetails.firstname);
-            // alert("Your details will be updated");
-            setTimeout(async () => {
-                const reply = await axios.post("http://localhost:3000/receiveUserDetails",{
-                    withCredentials: true
-                })
-                alert(`${reply.data}`);
+            alert(`"Response:" + ${response.data}`);
+            setTimeout( () => {
+                // const reply = await axios.post("http://localhost:3000/receiveUserDetails",{
+                //     withCredentials: true
+                // })
+                // alert(`${reply.data}`); did this to receive data after we sent. found out while we seding
+                // response also can bewith with same request there in first axios.post aboe
         
                 window.location.href = "http://localhost:5173";
-            }, 10000);
+            }, 1500);
             
         } catch (error) {
             console.log("Error:", error);
