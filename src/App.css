@@ -4,7 +4,9 @@
     height: 100%;
     position: relative;
     border-radius: 5px;
-    background-image: url(./assets/backgroundImage.gif);
+    background-color: lightcoral;
+    background-image: url('./assets/backgroundImage.gif');
+    
     
 }
 
@@ -13,7 +15,7 @@
     min-height: 40vh;
     max-height: 50vh;
     
-    background-image: url(./assets/backgroundImage.gif);
+   
     margin-bottom: 40px;
     
     
@@ -25,6 +27,7 @@
     max-height: 50vh;
     
     
+    
    
 }
 
@@ -33,12 +36,16 @@
     
     background-color: blue;
     min-height: 100vh;
+    
     /* The main section will grow to take up the remaining space between the header and footer */
+    background-image: url(./assets/MainBackgroundimage.png);
 }
 
 .footer {
+    
     height: 10%;
     min-height: 15vh;
+    
    
     background-color: lightcoral;
 

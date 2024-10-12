@@ -29,7 +29,8 @@ const Updatedetails = (props) => {
 
             // Show an alert and redirect after the data is successfully sent
             // console.log(getDetails.firstname);
-            alert(`"Response:" + ${response.data}`);
+           console.log(response.data.response);
+            alert(`${response.data.response} : Retry Logging in`);
             setTimeout( () => {
                 // const reply = await axios.post("http://localhost:3000/receiveUserDetails",{
                 //     withCredentials: true
@@ -37,7 +38,7 @@ const Updatedetails = (props) => {
                 // alert(`${reply.data}`); did this to receive data after we sent. found out while we seding
                 // response also can bewith with same request there in first axios.post aboe
         
-                window.location.href = "http://localhost:5173";
+                window.location.href = "http://localhost:3000";
             }, 1500);
             
         } catch (error) {
