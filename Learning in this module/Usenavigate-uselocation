@@ -1,0 +1,90 @@
+`useNavigate` and `useLocation` are two important hooks provided by **React Router** that allow you to manage navigation and access route-related information in your React applications.
+
+### 1. `useNavigate`:
+`useNavigate` is used for programmatic navigation in your React application. It allows you to redirect or navigate the user to another route without using `<Link>` or `<a>` elements.
+
+#### How It Works:
+- When you call `useNavigate()`, it returns a function (`navigate`) that you can use to navigate to a different route within your application.
+- This function can be used to:
+  - Redirect the user to a new route.
+  - Pass additional data (state) to the target route.
+  - Replace the current route (instead of pushing to the history stack).
+
+#### Basic Example:
+```javascript
+import { useNavigate } from 'react-router-dom';
+
+function ExampleComponent() {
+  const navigate = useNavigate();
+
+  function handleClick() {
+    // Navigate to "/about" page
+    navigate('/about');
+  }
+
+  return (
+    <button onClick={handleClick}>Go to About Page</button>
+  );
+}
+```
+
+#### With State:
+You can also pass **state** along with navigation, which will be available on the new route.
+
+```javascript
+function handleClick() {
+  navigate('/about', { state: { message: 'Hello, About Page!' } });
+}
+```
+
+### 2. `useLocation`:
+`useLocation` is used to access the current route's location information, such as the pathname, search parameters (query string), hash, and any state that was passed when navigating to this route.
+
+#### How It Works:
+- When you call `useLocation()`, it returns an object representing the current location of the app. This object includes:
+  - `pathname`: The current URL path.
+  - `search`: Query parameters in the URL.
+  - `hash`: The fragment identifier in the URL.
+  - `state`: Any state data that was passed during navigation.
+
+#### Basic Example:
+```javascript
+import { useLocation } from 'react-router-dom';
+
+function ExampleComponent() {
+  const location = useLocation();
+
+  console.log(location.pathname); // Current path, e.g., '/home'
+  console.log(location.state);    // State passed during navigation, e.g., { message: 'Hello' }
+
+  return <div>Current path: {location.pathname}</div>;
+}
+```
+
+### Use Case Together:
+
+In your scenario, you are using both `useNavigate` and `useLocation` to pass data from one component to another.
+
+#### Example Flow:
+1. **Using `useNavigate`:** In `MainComponent`, you navigate to the `/Shop` route programmatically and pass the shop details as state.
+
+```javascript
+function dishdatasent(shopDetails) {
+  navigate('/Shop', { state: { shopDetails } });
+}
+```
+
+2. **Using `useLocation`:** In the `Shop` component, you retrieve the `shopDetails` from the state using `useLocation`.
+
+```javascript
+const location = useLocation();
+const { shopDetails } = location.state;  // Retrieve the shop details
+```
+
+This allows you to pass and access data between routes seamlessly without the need to manage global state or URL parameters.
+
+### Summary:
+- **`useNavigate`**: Lets you navigate programmatically and pass state to the target route.
+- **`useLocation`**: Lets you access the current location's information, including state that was passed when navigating.
+
+Together, they help create a smooth experience for passing data and controlling navigation in your React Router-based application.

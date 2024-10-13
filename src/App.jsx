@@ -11,6 +11,7 @@ import MyFavourites from './Componenets/MyFavourites';
 import MyCart from './Componenets/MyCart';
 import MyProfile from './Componenets/MyProfile';
 import Updatedetails from './Componenets/Updateinput';
+import Shop from './Componenets/shops';
 
 
 function App() {
@@ -90,6 +91,7 @@ function App() {
           username={UserName}
         />
       </div>
+      
 
       <div className="footer" ref={footerRef}>
         <Footer  
@@ -141,6 +143,15 @@ function App() {
             <Updatedetails/>
           </div>
         }
+        />
+        <Route
+        path='/Shop'
+        element = {
+          <div className='Shops'>
+          <Shop/>
+          </div>
+        }
+        
         />
       </Routes>
     

@@ -39,12 +39,13 @@
     
     /* The main section will grow to take up the remaining space between the header and footer */
     background-image: url(./assets/MainBackgroundimage.png);
+    background-color: #f4f4f4;
 }
 
 .footer {
     
     height: 10%;
-    min-height: 15vh;
+    max-height: 15vh;
     
    
     background-color: lightcoral;
@@ -69,5 +70,10 @@
 .Details{
     max-height: 100vh;
     background-image: url("./assets/backgroundImage.gif");
+    height: 100%;
+}
+
+.Shops{
+    background-image: url(./assets/MainBackgroundimage.png);
     height: 100%;
 }
