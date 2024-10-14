@@ -4,7 +4,7 @@ const Dishes = (props) => {
     
     return(
         <div className= {styles.container}>
-            <h1>Dosa</h1>
+            <h1>Dosa {props.dish.price} {props.dish.dish}</h1>
         </div>
     )
 }

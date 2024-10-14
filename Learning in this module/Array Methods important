@@ -1,0 +1,198 @@
+In JavaScript, several built-in **higher-order functions** allow you to work with arrays in a clean, functional way. These methods, like `map()`, `filter()`, `reduce()`, and others, help process arrays by applying a function to each element. Here's a detailed explanation of the key ones:
+
+### 1. **`map()`**
+- **Purpose:** Creates a new array by applying a function to every element in the original array.
+- **Use case:** When you need to transform an array without changing its structure (same number of elements).
+  
+  **Syntax:**
+  ```javascript
+  let newArray = arr.map(callback);
+  ```
+
+  **Example:**
+  ```javascript
+  let numbers = [1, 2, 3, 4];
+  let doubled = numbers.map(num => num * 2);
+  console.log(doubled); // [2, 4, 6, 8]
+  ```
+
+### 2. **`filter()`**
+- **Purpose:** Creates a new array with only the elements that pass a certain condition.
+- **Use case:** When you need to remove unwanted items from an array.
+  
+  **Syntax:**
+  ```javascript
+  let filteredArray = arr.filter(callback);
+  ```
+
+  **Example:**
+  ```javascript
+  let numbers = [1, 2, 3, 4];
+  let evenNumbers = numbers.filter(num => num % 2 === 0);
+  console.log(evenNumbers); // [2, 4]
+  ```
+
+### 3. **`reduce()`**
+- **Purpose:** Reduces an array to a single value by executing a function on each element (from left to right).
+- **Use case:** When you need to accumulate a result from an array, like summing all numbers.
+  
+  **Syntax:**
+  ```javascript
+  let result = arr.reduce((accumulator, currentValue) => {
+      return accumulator + currentValue;
+  }, initialValue);
+  ```
+
+  **Example:**
+  ```javascript
+  let numbers = [1, 2, 3, 4];
+  let sum = numbers.reduce((total, num) => total + num, 0);
+  console.log(sum); // 10
+  ```
+
+### 4. **`forEach()`**
+- **Purpose:** Executes a function on each array element (similar to a `for` loop), but it doesn't return anything.
+- **Use case:** When you need to iterate through an array but don't need a new array.
+  
+  **Syntax:**
+  ```javascript
+  arr.forEach(callback);
+  ```
+
+  **Example:**
+  ```javascript
+  let numbers = [1, 2, 3, 4];
+  numbers.forEach(num => console.log(num));
+  // Outputs: 1, 2, 3, 4
+  ```
+
+### 5. **`find()`**
+- **Purpose:** Returns the first element that satisfies the condition in the callback function.
+- **Use case:** When you need to find the first occurrence of an element that matches a certain condition.
+  
+  **Syntax:**
+  ```javascript
+  let found = arr.find(callback);
+  ```
+
+  **Example:**
+  ```javascript
+  let numbers = [1, 2, 3, 4];
+  let firstEven = numbers.find(num => num % 2 === 0);
+  console.log(firstEven); // 2
+  ```
+
+### 6. **`findIndex()`**
+- **Purpose:** Returns the index of the first element that satisfies the condition, or `-1` if not found.
+- **Use case:** When you need the position of an element in the array.
+  
+  **Syntax:**
+  ```javascript
+  let index = arr.findIndex(callback);
+  ```
+
+  **Example:**
+  ```javascript
+  let numbers = [1, 2, 3, 4];
+  let index = numbers.findIndex(num => num === 3);
+  console.log(index); // 2
+  ```
+
+### 7. **`some()`**
+- **Purpose:** Checks if at least one element in the array satisfies the condition.
+- **Use case:** When you need a boolean check if any element passes a test.
+  
+  **Syntax:**
+  ```javascript
+  let result = arr.some(callback);
+  ```
+
+  **Example:**
+  ```javascript
+  let numbers = [1, 2, 3, 4];
+  let hasEven = numbers.some(num => num % 2 === 0);
+  console.log(hasEven); // true
+  ```
+
+### 8. **`every()`**
+- **Purpose:** Checks if all elements in the array satisfy the condition.
+- **Use case:** When you need to confirm that every element passes a test.
+  
+  **Syntax:**
+  ```javascript
+  let result = arr.every(callback);
+  ```
+
+  **Example:**
+  ```javascript
+  let numbers = [2, 4, 6];
+  let allEven = numbers.every(num => num % 2 === 0);
+  console.log(allEven); // true
+  ```
+
+### 9. **`sort()`**
+- **Purpose:** Sorts the elements of the array **in place** and returns the sorted array.
+- **Use case:** When you need to order elements in ascending or descending order.
+  
+  **Syntax:**
+  ```javascript
+  arr.sort([compareFunction]);
+  ```
+
+  **Example:**
+  ```javascript
+  let numbers = [3, 1, 4, 2];
+  numbers.sort((a, b) => a - b); // Sort in ascending order
+  console.log(numbers); // [1, 2, 3, 4]
+  ```
+
+### 10. **`concat()`**
+- **Purpose:** Merges two or more arrays into a new array.
+- **Use case:** When you need to combine arrays.
+  
+  **Syntax:**
+  ```javascript
+  let newArray = arr1.concat(arr2);
+  ```
+
+  **Example:**
+  ```javascript
+  let arr1 = [1, 2];
+  let arr2 = [3, 4];
+  let merged = arr1.concat(arr2);
+  console.log(merged); // [1, 2, 3, 4]
+  ```
+
+### 11. **`slice()`**
+- **Purpose:** Returns a shallow copy of a portion of an array into a new array.
+- **Use case:** When you need a subarray from an original array.
+  
+  **Syntax:**
+  ```javascript
+  let newArray = arr.slice(start, end);
+  ```
+
+  **Example:**
+  ```javascript
+  let numbers = [1, 2, 3, 4, 5];
+  let sliced = numbers.slice(1, 4); // Extracts from index 1 to 3
+  console.log(sliced); // [2, 3, 4]
+  ```
+
+### 12. **`splice()`**
+- **Purpose:** Modifies the array **in place** by adding, removing, or replacing elements.
+- **Use case:** When you need to modify the array directly.
+  
+  **Syntax:**
+  ```javascript
+  arr.splice(start, deleteCount, item1, item2, ...);
+  ```
+
+  **Example:**
+  ```javascript
+  let numbers = [1, 2, 3, 4];
+  numbers.splice(1, 2, 5, 6); // Removes 2 elements from index 1 and adds 5, 6
+  console.log(numbers); // [1, 5, 6, 4]
+  ```
+
+These methods are essential for working with arrays in JavaScript, offering a wide variety of operations that can help you write clean, efficient, and functional code.
