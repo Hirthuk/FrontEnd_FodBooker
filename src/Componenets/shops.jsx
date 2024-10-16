@@ -23,7 +23,7 @@ const Shop = (props) => {
     return(
         <div className= {styles.container}>
             {Object.values(DishDetails).map((currentdish,index) => {
-                <Dishes key={index} dish ={currentdish} />
+               return <Dishes key={index} dish ={currentdish} />
             })}
            
             <Footer></Footer>
