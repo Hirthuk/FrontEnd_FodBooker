@@ -11,7 +11,7 @@ const Shop = (props) => {
     // from an object. Object.values convert the object like array for now and we can grab like array
     // Object.keys take that object keys and Object.values takes the values
     const DishDetails = location.state.shopdetails;
-    console.log(DishDetails);
+    // console.log(DishDetails);
 
     // Map function for array is used to do smtg for every element in the array with the function we define inside
     // normally map function argument function .map(function(currentvalue, index, array)) shall pass 3 values
