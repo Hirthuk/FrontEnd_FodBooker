@@ -7,6 +7,7 @@ const Dishes = (props) => {
 
    
     const dish = props.dish; // Destructure the dish object
+    // console.log(dish);
 
     const handleDataAxios = async (dishObject) => {
         const response = await axios.post("http://localhost:3000/FavouriteDetails",dishObject,{
@@ -16,6 +17,7 @@ const Dishes = (props) => {
             withCredentials: true
             
         })
+        alert(`${response.data.response}`);
 
     }
     const favouriteAdd = (event) => {
