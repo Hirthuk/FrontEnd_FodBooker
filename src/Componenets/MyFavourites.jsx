@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import DishesforFavourite from "./dishfieldforfavourites";
+import DishesforFavourite from '../Componenets/dishfieldforfavourites'
 import styles from './../Componenets/component styles/dishes.module.css';
 
 const MyFavourites = (props) => {
@@ -16,7 +16,7 @@ const MyFavourites = (props) => {
           },
           withCredentials: true,
         });
-        console.log(response.data.response);
+        // console.log(response.data.response);
         setFavourites(response.data.response);
       } catch (err) {
         console.error("Error fetching favourites:", err);

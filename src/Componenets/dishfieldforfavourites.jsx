@@ -1,26 +1,38 @@
-import React from 'react';
-import styles from './../Componenets/component styles/dishes.module.css';
-import axios from 'axios';
+import React, { useEffect } from "react";
+import styles from './component styles/dishes.module.css'
+import axios from "axios";
 
 const DishesforFavourite = (props) => {
 
    
-    console.log(props);
-   
-    [
-        {
-            "dishId": "S2D1"
-        }
-    ]
-    
+
+    useEffect(() => {
+        const details = props.favourites;
+
+    const SetdishIds = new Set(details.map((currentValue => 
+        console.log(currentValue))
+    ));
+        const axiosFunction = (SetdishIds) => {
+        const DishDetails = axios.post("http://localhost:3000/getDishDetailsforFavouroite",SetdishIds,{
+            headers : {
+                "Content-Type" : "application/json"
+            },
+            withCredentials: true
+        })
+    }
+    axiosFunction();
+
+    },[props])
+     
+
     return (
         <div className={styles.dishRow}>
-            {/* <span className={styles.foodName}>{dish.dish}</span>
-            <span className={styles.price}>₹{dish.price}</span> */}
+            <span className={styles.foodName}>Dosa</span>
+            <span className={styles.price}>₹30</span>
             <div className={styles.buttons}>
                 <button className={`${styles.button} ${styles.buy}`}>Buy</button>
                 <button  className={`${styles.button} ${styles.addCart}`}>Add to Cart</button>
-                <button className={`${styles.button} ${styles.fav}`}>UnFavourite</button>
+                <button className={`${styles.button} ${styles.fav}`}>Favourite</button>
             </div>
         </div>
     );
