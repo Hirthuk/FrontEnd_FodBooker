@@ -1,41 +1,53 @@
-import React, { useEffect } from "react";
-import styles from './component styles/dishes.module.css'
+import React, { useEffect, useState } from "react";
+import styles from './component styles/dishes.module.css';
 import axios from "axios";
 
 const DishesforFavourite = (props) => {
-
-   
+    const [responseDetails, setResponseDetails] = useState([]);
 
     useEffect(() => {
-        const details = props.favourites;
+        const fetchFavouriteDishes = async () => {
+            const propsElements = props.favourites;
+            const FavDishIds = propsElements.map((currentValue) => currentValue.dishId);
+            
+            try {
+                const fetchedDetails = [];
+                for (let dishId of FavDishIds) {
+                    const response = await axios.post("http://localhost:3000/getDishDetailsforFavouroite", {
+                        dishId: dishId
+                    }, {
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        withCredentials: true
+                    });
+                    fetchedDetails.push(response.data.response);  // Assuming response format contains 'response'
+                }
+                setResponseDetails(fetchedDetails);
+            } catch (error) {
+                console.error("Error fetching dish details:", error);
+            }
+        };
+        
+        fetchFavouriteDishes();
+    }, [props.favourites]);  // Runs when `props.favourites` changes
 
-    const SetdishIds = new Set(details.map((currentValue => 
-        console.log(currentValue))
-    ));
-        const axiosFunction = (SetdishIds) => {
-        const DishDetails = axios.post("http://localhost:3000/getDishDetailsforFavouroite",SetdishIds,{
-            headers : {
-                "Content-Type" : "application/json"
-            },
-            withCredentials: true
-        })
-    }
-    axiosFunction();
-
-    },[props])
-     
-
+    // console.log(responseDetails);  // Check the fetched data
+return responseDetails.map((currentValue) => {
     return (
         <div className={styles.dishRow}>
-            <span className={styles.foodName}>Dosa</span>
-            <span className={styles.price}>₹30</span>
+            <span className={styles.foodName}>{currentValue.dishName}</span>
+            <span className={styles.price}>₹{currentValue.price}</span>
             <div className={styles.buttons}>
                 <button className={`${styles.button} ${styles.buy}`}>Buy</button>
                 <button  className={`${styles.button} ${styles.addCart}`}>Add to Cart</button>
-                <button className={`${styles.button} ${styles.fav}`}>Favourite</button>
+                <button className={`${styles.button} ${styles.fav}`}>Unfavourite</button>
             </div>
         </div>
     );
-}
+    
+})
+   
+};
 
 export default DishesforFavourite;
