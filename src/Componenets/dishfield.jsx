@@ -20,6 +20,15 @@ const Dishes = (props) => {
         alert(`${response.data.response}`);
 
     }
+    const handleCartData = async (cartdetails) => {
+        const response = await axios.post("http://localhost:3000/CartDetails",cartdetails,{
+            headers : {
+                "Content-Type": "application/json"
+            },
+            withCredentials: true
+        })
+        alert(`${response.data.response}`);
+    }
     const favouriteAdd = (event) => {
         event.preventDefault();
         // alert("Favourites has been added");
@@ -29,7 +38,7 @@ const Dishes = (props) => {
     const cartAdded = (event) => {
         event.preventDefault();
         // console.log(dish);
-        handleDataAxios(dish);
+        handleCartData(dish);
         
     }
     return (

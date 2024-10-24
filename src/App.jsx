@@ -108,7 +108,7 @@ function App() {
           <div>
            
             <MyFavourites/>
-            <Footer/>
+          
 
           </div>
         }
@@ -119,7 +119,7 @@ function App() {
           <div> 
           
            <MyCart/>
-           <Footer/>
+           
           
           </div>
         }
