@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import DishesforFavourite from '../Componenets/dishfieldforfavourites'
+import DishesforCart from "./dishfieldForcart";
 import styles from './../Componenets/component styles/dishes.module.css';
 
 const MyCart = (props) => {
@@ -34,8 +34,8 @@ const MyCart = (props) => {
         became true dishes will come*/}
       {error ? (
         <p>{error}</p>
-      ) : favourites ? (
-        <DishesforFavourite favourites={cart} /> // Pass fetched data to the Dishes component
+      ) : cart ? (
+        <DishesforCart favourites={cart} /> // Pass fetched data to the Dishes component
       ) : (
         <p>Loading...</p>
       )}

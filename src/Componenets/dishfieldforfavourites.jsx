@@ -33,6 +33,10 @@ const DishesforFavourite = (props) => {
     }, [props.favourites]);  // Runs when `props.favourites` changes
 
     // console.log(responseDetails);  // Check the fetched data
+    const removeFavourites = (event) => {
+        event.preventDefault();
+        console.log(responseDetails);
+    }
 return responseDetails.map((currentValue) => {
     return (
         <div className={styles.dishRow}>
@@ -41,7 +45,7 @@ return responseDetails.map((currentValue) => {
             <div className={styles.buttons}>
                 <button className={`${styles.button} ${styles.buy}`}>Buy</button>
                 <button  className={`${styles.button} ${styles.addCart}`}>Add to Cart</button>
-                <button className={`${styles.button} ${styles.fav}`}>Unfavourite</button>
+                <button onClick={removeFavourites} className={`${styles.button} ${styles.fav}`}>Unfavourite</button>
             </div>
         </div>
     );

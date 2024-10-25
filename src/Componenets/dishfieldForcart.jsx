@@ -40,8 +40,8 @@ return responseDetails.map((currentValue) => {
             <span className={styles.price}>₹{currentValue.price}</span>
             <div className={styles.buttons}>
                 <button className={`${styles.button} ${styles.buy}`}>Buy</button>
-                <button  className={`${styles.button} ${styles.addCart}`}>Add to Cart</button>
-                <button className={`${styles.button} ${styles.fav}`}>Unfavourite</button>
+                <button  className={`${styles.button} ${styles.addCart}`}>remove</button>
+                <button className={`${styles.button} ${styles.fav}`}>Favourite</button>
             </div>
         </div>
     );
