@@ -33,14 +33,32 @@ const DishesforCart = (props) => {
     }, [props.favourites]);  // Runs when `props.favourites` changes
 
     // console.log(responseDetails);  // Check the fetched data
+    const removeCart = async (dishId,event) => {
+        // event.preventDefault();
+        const response = await axios.post("http://localhost:3000/removeCart",{dishId: dishId},{
+            headers: {
+                "Content-Type": "application/json"
+            },
+            withCredentials: true
+        })
+        const result = response.data.response;
+        console.log(result);
+        if(result=== "Done"){
+            window.location.reload();
+        }
+        else{
+            alert(`${result}`);
+        }
+    }
 return responseDetails.map((currentValue) => {
+    console.log(currentValue);
     return (
         <div className={styles.dishRow}>
             <span className={styles.foodName}>{currentValue.dishName}</span>
             <span className={styles.price}>₹{currentValue.price}</span>
             <div className={styles.buttons}>
                 <button className={`${styles.button} ${styles.buy}`}>Buy</button>
-                <button  className={`${styles.button} ${styles.addCart}`}>remove</button>
+                <button onClick={(event) => {removeCart(currentValue.dishId,event)}} className={`${styles.button} ${styles.addCart}`}>remove</button>
                 <button className={`${styles.button} ${styles.fav}`}>Favourite</button>
             </div>
         </div>

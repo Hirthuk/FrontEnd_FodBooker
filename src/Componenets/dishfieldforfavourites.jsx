@@ -63,6 +63,7 @@ const DishesforFavourite = (props) => {
     }
     
 return responseDetails.map((currentValue) => {
+    console.log(currentValue);
     return (
         <div className={styles.dishRow}>
             <span className={styles.foodName}>{currentValue.dishName}</span>
