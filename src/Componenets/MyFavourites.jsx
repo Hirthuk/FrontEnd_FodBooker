@@ -6,6 +6,7 @@ import styles from './../Componenets/component styles/dishes.module.css';
 const MyFavourites = (props) => {
   const [favourites, setFavourites] = useState(null);
   const [error, setError] = useState(null);
+  const [getError,settheError] = useState(false)
 
   useEffect(() => {
     const fetchFavourites = async () => {
@@ -16,8 +17,15 @@ const MyFavourites = (props) => {
           },
           withCredentials: true,
         });
+        const result = response.data.response;
+        if(result == "Kindly add any favourites"){
+         alert(`${result}`);
+         setTimeout(() => {
+          window.location.href = "http://localhost:5173";
+         },1000)
+        }
         // console.log(response.data.response);
-        setFavourites(response.data.response);
+        setFavourites(result);
       } catch (err) {
         console.error("Error fetching favourites:", err);
         setError("Failed to load favourites. Please try again.");

@@ -1,27 +1,37 @@
-/* dishes.module.css */
-
+/* Container styling remains the same */
 .container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 100vh; /* Takes the full height of the viewport */
+    align-items: center;
+    gap: 20px;
     padding: 20px;
+    min-height: 50vh;
 }
 
+/* Full-width adjustment for desktop */
 .dishRow {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #f9f9f9; /* Light background */
+    background-color: #f9f9f9;
     padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    width: 100%; /* Full width */
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Animation */
 }
 
+/* Animation for dishRow on hover */
+.dishRow:hover {
+    transform: translateY(-5px); /* Subtle lift on hover */
+    background-color: #f0f0f0; /* Slightly different shade on hover */
+}
+
+/* Food name and price styling */
 .foodName {
     font-size: 2rem;
-    flex: 1; /* Takes more space */
+    flex: 1;
+    transition: color 0.3s ease;
 }
 
 .price {
@@ -31,20 +41,21 @@
     text-align: right;
 }
 
+/* Button container */
 .buttons {
     display: flex;
-    gap: 10px; /* Spacing between buttons */
-    flex: 1; /* Makes sure buttons take up space */
+    gap: 10px;
     justify-content: flex-end;
 }
 
+/* Button styling with hover animations */
 .button {
     padding: 10px 15px;
     font-size: 1rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Add transform for subtle animations */
 }
 
 .button.buy {
@@ -62,10 +73,13 @@
     color: white;
 }
 
+/* Hover effects for buttons */
 .button:hover {
-    opacity: 0.9; /* Slight hover effect */
+    opacity: 0.9;
+    transform: scale(1.05); /* Scale up slightly */
 }
 
+/* For mobile adjustments */
 @media (max-width: 768px) {
     .dishRow {
         flex-direction: column;
