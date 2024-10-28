@@ -17,7 +17,14 @@ const MyCart = (props) => {
           withCredentials: true,
         });
         // console.log(response.data.response);
-        addcart(response.data.response);
+        const result = response.data.response;
+        if(result == "Don't have anything in your cart"){
+          alert(`${result}`);
+          setTimeout(() => {
+           window.location.href = "http://localhost:5173";
+          },1000)
+         }
+        addcart(result);
       } catch (err) {
         console.error("Error fetching favourites:", err);
         setError("Failed to load favourites. Please try again.");

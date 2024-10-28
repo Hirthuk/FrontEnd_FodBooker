@@ -69,7 +69,7 @@ return responseDetails.map((currentValue) => {
             <span className={styles.foodName}>{currentValue.dishName}</span>
             <span className={styles.price}>₹{currentValue.price}</span>
             <div className={styles.buttons}>
-                <button className={`${styles.button} ${styles.buy}`}>Buy</button>
+                <button onClick={() => {alert("Thanks for buying(Not in live)")}} className={`${styles.button} ${styles.buy}`}>Buy</button>
                 <button onClick={(event) => {handleCartData(currentValue.dishId,event)}} className={`${styles.button} ${styles.addCart}`}>Add to Cart</button>
                 <button onClick={(event) => {removeFavourites(currentValue.dishId,event)}} className={`${styles.button} ${styles.fav}`}>Unfavourite</button>
             </div>

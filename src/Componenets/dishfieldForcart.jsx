@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from './component styles/dishes.module.css';
 import axios from "axios";
+import Totalprice from './Totalprice'
 
 const DishesforCart = (props) => {
     const [responseDetails, setResponseDetails] = useState([]);
@@ -30,42 +31,56 @@ const DishesforCart = (props) => {
         };
         
         CartDetails();
-    }, [props.favourites]);  // Runs when `props.favourites` changes
+    }, [props.favourites]);
 
-    // console.log(responseDetails);  // Check the fetched data
-    const removeCart = async (dishId,event) => {
-        // event.preventDefault();
-        const response = await axios.post("http://localhost:3000/removeCart",{dishId: dishId},{
+    const removeCart = async (dishId, event) => {
+        const response = await axios.post("http://localhost:3000/removeCart", { dishId: dishId }, {
             headers: {
                 "Content-Type": "application/json"
             },
             withCredentials: true
-        })
+        });
         const result = response.data.response;
-        console.log(result);
-        if(result=== "Done"){
+        if (result === "Done") {
             window.location.reload();
-        }
-        else{
+        } else {
             alert(`${result}`);
         }
-    }
-return responseDetails.map((currentValue) => {
-    console.log(currentValue);
+    };
+
+    const addFavourite = async (dishId, dishName, price) => {
+        const response = await axios.post("http://localhost:3000/addFavfromCart", {
+            dishId: dishId,
+            dishName: dishName,
+            price: price
+        }, {
+            headers: {
+                "Content-Type": 'application/json'
+            },
+            withCredentials: true
+        });
+        alert(`${response.data.response}`);
+    };
+
+    // Calculate total price
+    const totalPrice = responseDetails.reduce((sum, currentValue) => sum + currentValue.price, 0);
+
     return (
-        <div className={styles.dishRow}>
-            <span className={styles.foodName}>{currentValue.dishName}</span>
-            <span className={styles.price}>₹{currentValue.price}</span>
-            <div className={styles.buttons}>
-                <button className={`${styles.button} ${styles.buy}`}>Buy</button>
-                <button onClick={(event) => {removeCart(currentValue.dishId,event)}} className={`${styles.button} ${styles.addCart}`}>remove</button>
-                <button className={`${styles.button} ${styles.fav}`}>Favourite</button>
-            </div>
-        </div>
+        <>
+            {responseDetails.map((currentValue) => (
+                <div key={currentValue.dishId} className={styles.dishRow}>
+                    <span className={styles.foodName}>{currentValue.dishName}</span>
+                    <span className={styles.price}>₹{currentValue.price}</span>
+                    <div className={styles.buttons}>
+                        <button onClick={() => {alert("Thanks for buying(Not in live)")}} className={`${styles.button} ${styles.buy}`}>Buy</button>
+                        <button onClick={(event) => removeCart(currentValue.dishId, event)} className={`${styles.button} ${styles.addCart}`}>Remove</button>
+                        <button onClick={(event) => addFavourite(currentValue.dishId, currentValue.dishName, currentValue.price)} className={`${styles.button} ${styles.fav}`}>Favourite</button>
+                    </div>
+                </div>
+            ))}
+            <Totalprice totalprice={totalPrice} />
+            </>
     );
-    
-})
-   
 };
 
 export default DishesforCart;
