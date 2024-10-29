@@ -78,7 +78,7 @@ const DishesforCart = (props) => {
                     </div>
                 </div>
             ))}
-            <Totalprice totalprice={totalPrice} />
+            <Totalprice  onClick={() => {alert("Thanks for buying(Not in live)")}} totalprice={totalPrice} />
             </>
     );
 };
