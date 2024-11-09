@@ -1,3 +1,4 @@
+/* Main App Container */
 .App {
     display: flex;
     flex-direction: column;
@@ -6,74 +7,145 @@
     border-radius: 5px;
     background-color: lightcoral;
     background-image: url('./assets/backgroundImage.gif');
-    
-    
 }
 
-.header  {
+/* Header Section */
+.header {
     height: 15%;
     min-height: 40vh;
     max-height: 50vh;
-    
-   
     margin-bottom: 40px;
-    
-    
-
 }
+
 .secondheader {
     height: 15%;
     min-height: 31vh;
     max-height: 50vh;
-    
-    
-    
-   
 }
 
-
+/* Main Section */
 .main {
-    
     background-color: blue;
     min-height: 100vh;
-    
-    /* The main section will grow to take up the remaining space between the header and footer */
-    background-image: url(./assets/MainBackgroundimage.png);
+    background-image: url('./assets/MainBackgroundimage.png');
     background-color: #f4f4f4;
 }
 
+/* Footer Section */
 .footer {
-    
     height: 10%;
     max-height: 15vh;
-    
-   
     background-color: lightcoral;
-
-   
 }
 
-.Profile{
-    margin: 1rem;   /* Adds padding inside the profile container */
-    border: 4px solid #000; /* Adds a black border around the profile section */
+/* Profile Section */
+.Profile {
+    margin: 1rem;
+    border: 4px solid #000;
     padding: 0.25rem;
-    background-color: #f9f9f9; /* Optional: light background */
-    border-radius: 5px; /* Optional: adds rounded corners */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds shadow for depth */
-    
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-  }
-  
+}
 
-.Details{
+/* Details Section */
+.Details {
     max-height: 100vh;
     background-image: url("./assets/backgroundImage.gif");
     height: 100%;
 }
 
-.Shops{
-    background-image: url(./assets/MainBackgroundimage.png);
+/* Shops Section */
+.Shops {
+    background-image: url('./assets/MainBackgroundimage.png');
     height: 100%;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Tablet View (768px - 1024px) */
+@media (max-width: 1024px) {
+    .App {
+        background-color: #e6e6e6;
+        background-image: none;
+        padding: 1rem;
+    }
+
+    .header, .secondheader {
+        height: 20%;
+        min-height: 30vh;
+        margin-bottom: 20px;
+        background-color: #fafafa;
+    }
+
+    .main {
+        background-image: none;
+        background-color: #d0d0d0;
+        padding: 1rem;
+    }
+
+    .footer {
+        height: 12%;
+        max-height: 20vh;
+        background-color: #ccc;
+    }
+
+    .Profile {
+        margin: 0.5rem;
+        padding: 0.5rem;
+        border: 3px solid #888;
+        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.08);
+    }
+
+    .Details, .Shops {
+        background-image: none;
+        background-color: #f3f3f3;
+    }
+}
+
+/* Mobile View (up to 767px) */
+@media (max-width: 767px) {
+    .App {
+        background-color: #f7f7f7;
+        padding: 0.5rem;
+    }
+
+    .header, .secondheader {
+        height: auto;
+        min-height: 20vh;
+        padding: 0.5rem;
+        background-color: #f0f0f0;
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main {
+        background-color: #ececec;
+        min-height: auto;
+        padding: 0.5rem;
+    }
+
+    .footer {
+        height: 10%;
+        background-color: #b0b0b0;
+    }
+
+    .Profile {
+        margin: 0.25rem;
+        padding: 0.25rem;
+        border: 2px solid #444;
+        box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.05);
+        background-color: #fefefe;
+    }
+
+    .Details, .Shops {
+        background-image: none;
+        background-color: #fafafa;
+    }
 }
